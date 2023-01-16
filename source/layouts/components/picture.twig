@@ -1,0 +1,34 @@
+{% with image %}
+	<picture>
+		{% if webpMobile %}
+			<source
+				type="image/webp"
+				media="(max-width: 320px)"
+				srcset="{{ webpMobile }} 1x{{ webpMobile2x ? ', ' ~ webpMobile2x ~ ' 2x' }}"
+			/>
+		{% endif %}
+		{% if webpTablet %}
+			<source
+				type="image/webp"
+				media="(max-width: 1023px)"
+				srcset="{{ webpTablet }} 1x{{ webpTablet2x ? ', ' ~ webpTablet2x ~ ' 2x' }}"
+			/>
+		{% endif %}
+		{% if webp %}
+			<source
+				type="image/webp"
+				{{ webpTablet or webpMobile ? 'media="(min-width: 1024px)"' }}
+				srcset="{{ webp }} 1x{{ webp2x ? ', ' ~ webp2x ~ ' 2x' }}"
+			/>
+		{% endif %}
+
+		<img
+			{{ className ? 'class="' ~ className ~ '"' }}
+			src="{{ default }}"
+			{{ default2x ? 'srcset="' ~ default2x ~ ' 2x"' }}
+			alt="{{ alt }}"
+			{{ not alt ? 'aria-hidden="true"' }}
+			{{ not immediately ? 'loading="lazy"' }}
+		/>
+	</picture>
+{% endwith %}

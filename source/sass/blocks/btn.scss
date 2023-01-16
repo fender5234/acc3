@@ -1,0 +1,12 @@
+.btn {
+
+  font-family: inherit;
+  text-align: center;
+  overflow-wrap: anywhere;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  user-select: none;
+
+  @include default-interactive;
+}

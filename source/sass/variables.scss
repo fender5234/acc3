@@ -1,0 +1,33 @@
+// Default colors
+$color-default-black: #000000;
+$color-default-white: #ffffff;
+$color-transparent: rgba($color-default-white, 0);
+
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/000000
+
+// Gradient
+
+// Shadow
+
+// Typography
+$fz-default: 16px;
+$ff-fallback: "Arial", "sans-serif";
+$ff-roboto-condensed: "Roboto Condensed", $ff-fallback;
+$ff-alumni-sans: "Alumni Sans", $ff-fallback;
+
+// Animation
+$tf-default: ease;
+$trans-default: 0.3s $tf-default;
+
+// Viewports
+$vp-320: 320px;
+$vp-768: 768px;
+$vp-1024: 1024px;
+$vp-1100: 1100px;
+$vp-1250: 1250px;
+$vp-1300: 1300px;
+
+// Retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

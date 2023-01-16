@@ -1,0 +1,15 @@
+root: true
+
+parserOptions:
+  ecmaVersion: 2015
+  sourceType: 'module'
+
+env:
+  es6: true
+  browser: true
+  commonjs: true
+
+globals:
+  Swiper: readonly
+
+extends: "./eslintconfig.cjs"

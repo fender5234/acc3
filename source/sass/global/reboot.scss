@@ -1,0 +1,128 @@
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+
+  @include focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  font-size: $fz-default;
+  line-height: 1.5;
+  font-family: $ff-roboto-condensed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; // оптимизация выравнивания шрифта относительно центра строки
+  // если по прежнему есть проблемы с выравниванием
+  // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-skip-ink: none;
+
+  &:not([href]) {
+    pointer-events: none;
+  }
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// ios button \ inputs reset
+select,
+textarea,
+button,
+[type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"],
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// firefox placeholder \ invalid fix + ios bdrs
+input,
+textarea {
+  border-radius: 0;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.7;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+// ie11 X removal
+input {
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  // chrome autofill background removal
+  // если на проекте у инпутов используются разные цвета фонов\текста -
+  // удалите это из глобала и используйте локально с нужными цветами
+  // rgba не подойдет, сконвертируйте цвет в hex без прозрачности
+  // если в стилях уже используется box-shadow есть другое решение -
+  // задать к списку транзишенов `background-color 10000000s ease-out`
+  &:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px $color-default-white;
+    -webkit-text-fill-color: $color-default-black;
+  }
+
+  // chrome search X removal
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+  }
+}
+
+// input[number] arrows removal
+input[type="number"] {
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}

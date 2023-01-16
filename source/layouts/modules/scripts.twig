@@ -1,0 +1,14 @@
+{% if pageData %}
+	<script>window.pageData = {{ pageData }};</script>
+{% endif %}
+{% if isDev %}
+	<script>window.isDev = true;</script>
+{% endif %}
+
+<script src="js/vendor.min.js"></script>
+<script src="js/main.min.js{{ version }}"></script>
+
+{% if isDev and page == 'index' %}
+	<script>window.pixelperfect = { breakpoints: [320, 768, 1366] };</script>
+	<script src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js"></script>
+{% endif %}
