@@ -1,0 +1,12 @@
+<article class="card {{ bemMix }}" tabindex="0">
+	<h3 class="card__heading">{{ heading }}</h3>
+	<p class="card__description">{{ description }}</p>
+
+	{% if price %}
+		{% include 'price.twig' with { bemMix: 'card__price', currency: '₽', price } %}
+	{% endif %}
+
+	{% if link %}
+		<a class="card__btn btn" href="{{ link.url }}">{{ link.title }}</a>
+	{% endif %}
+</article>

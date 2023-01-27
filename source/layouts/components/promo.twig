@@ -1,0 +1,24 @@
+<section class="promo {{ bemMix }}">
+	<h2 class="promo__heading heading">{{ heading }}</h2>
+
+	<ul class="promo__list">
+		{% for item in list %}
+			<li class="promo__{{ item.image ? 'figure' : 'item' }}">
+				<article class="promo__content">
+					{{ item.content }}
+
+					<p class="promo__link-wrapper">
+						<a class="promo__link" href="{{ item.link.url }}">{{ item.link.title }}</a>
+					</p>
+				</article>
+
+				{% if item.image %}
+					<p class="promo__picture">
+						{% include 'picture.twig' with item.image %}
+					</p>
+				{% endif %}
+
+			</li>
+		{% endfor %}
+	</ul>
+</section>

@@ -45,7 +45,7 @@
       }
     }
 
-    @include vp-1023 {
+    @include vp-1199 {
       background-image: var(--bg-webpTablet, none);
 
       @include retina {
@@ -68,6 +68,27 @@
     @include retina {
       background-image: var(--bg-default2x, none);
     }
+  }
+}
+
+@mixin custom-scrollbar($color-thumb, $color-track, $size: 4px) {
+  scrollbar-color: $color-thumb $color-track;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background-color: $color-track;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-thumb;
+    border: none;
+    border-radius: calc($size / 4);
   }
 }
 
@@ -122,6 +143,22 @@
   mask: url("../img/sprite.svg##{$icon}") no-repeat center / 100%;
 }
 
+@mixin gradient-text {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right bottom, $color-crimson 0%, $color-cobalt-light 87.33%);
+  background-clip: text;
+}
+
+@mixin conic-gradient($from, $at) {
+  background-image: conic-gradient(
+    from $from at $at,
+    $color-venetian-red -46.69deg,
+    $color-dark-cerulean 32.24deg,
+    $color-venetian-red 313.31deg,
+    $color-dark-cerulean 392.24deg
+  );
+}
+
 // Desktop first
 
 @mixin vp-1299 {
@@ -136,8 +173,8 @@
   }
 }
 
-@mixin vp-1099 {
-  @media (max-width: ($vp-1100 - 1px)) {
+@mixin vp-1199 {
+  @media (max-width: ($vp-1200 - 1px)) {
     @content;
   }
 }
@@ -150,6 +187,12 @@
 
 @mixin vp-767 {
   @media (max-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-424 {
+  @media (max-width: ($vp-425 - 1px)) {
     @content;
   }
 }

@@ -1,0 +1,9 @@
+<ul class="nav {{ bemMix }}">
+	{% for link in navLinks %}
+		<li>
+			<a class="nav__link" href="{{ link.url }}">
+				{{ link.title }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>

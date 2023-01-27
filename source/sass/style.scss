@@ -1,6 +1,6 @@
 // Vendor
 @import "vendor/normalize";
-@import "../../node_modules/swiper/swiper";
+// @import "../../node_modules/swiper/swiper";
 
 // Global
 @import "variables";
@@ -11,7 +11,32 @@
 @import "global/container";
 
 // Blocks
+@import "blocks/about";
+@import "blocks/accent-section";
 @import "blocks/btn";
+@import "blocks/card";
+@import "blocks/cards-list";
+@import "blocks/content-group";
+@import "blocks/dict";
+@import "blocks/event";
+@import "blocks/figure";
+@import "blocks/form";
+@import "blocks/heading";
+@import "blocks/logo";
+@import "blocks/nav";
+@import "blocks/page";
+@import "blocks/page-header";
+@import "blocks/page-footer";
+@import "blocks/params-list";
+@import "blocks/price";
+@import "blocks/promo";
+@import "blocks/rates";
+@import "blocks/review";
+@import "blocks/slider";
+@import "blocks/socials";
+@import "blocks/tabs";
+@import "blocks/teaser";
+@import "blocks/video";
 
 // ❗ обязательно используйте миксины hover-focus и active для отключения ховеров на тач устройствах
 // адаптив пишем внутри каждого класса

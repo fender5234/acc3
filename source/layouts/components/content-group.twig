@@ -1,0 +1,9 @@
+<div class="content-group">
+	{% for item in data %}
+		<section class="content-group__item">
+			<h2 class="content-group__heading heading">{{ item.heading }}</h2>
+
+			{% include item.component ~ '.twig' with item|merge({ bemMix: 'content-group__content' }) %}
+		</section>
+	{% endfor %}
+</div>

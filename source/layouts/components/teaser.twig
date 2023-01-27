@@ -1,0 +1,21 @@
+<section class="teaser {{ bemMix }}">
+	<p class="teaser__label">{{ label }}</p>
+
+	<h2 class="teaser__heading">{{ title }}</h2>
+
+	{% if features %}
+		<ul class="teaser__features">
+			{% for feature in features %}
+				<li class="teaser__feature">{{ feature }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<a class="teaser__btn btn" href="{{ link.url }}">{{ link.title }}</a>
+
+	{% if image %}
+		<p class="teaser__image">
+			{% include 'picture.twig' with image %}
+		</p>
+	{% endif %}
+</section>

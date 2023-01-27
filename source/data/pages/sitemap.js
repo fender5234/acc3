@@ -1,4 +1,5 @@
 export default () => ({
+  pageTitle: 'Разводящая',
   pages: [
     {
       id: 'index',

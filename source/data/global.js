@@ -1,3 +1,11 @@
+const addFakeUrl = (payload) => {
+  const data = typeof payload === 'string' ? {title: payload} : payload;
+  data.url = '#!';
+  return data;
+};
+
+const projectName = 'SUPERGYM';
+
 export default () => ({
   getImages(filename, additions = {}, useTablet = true, useMobile = true) {
     const tabletSuffix = useTablet ? '-tablet' : '';
@@ -14,5 +22,25 @@ export default () => ({
       webpMobile2x: `img/${filename}${mobileSuffix}@2x.webp`,
     });
   },
-  projectName: 'SUPERGYM',
+  description: `Сайт омского спортивного клуба ${projectName}.`,
+  navLinks: ['Услуги', 'Абонементы', 'Акции', 'Тренеры', 'Расписание'].map(addFakeUrl),
+  projectName,
+  socials: [
+    {
+      id: 'vk',
+      title: 'Мы в Вконтакте',
+    },
+    {
+      id: 'ok',
+      title: 'Мы в Одноклассниках',
+    },
+    {
+      id: 'reddit',
+      title: 'Мы в Reddit',
+    },
+  ].map(addFakeUrl),
+  tel: {
+    title: '8-800-555-55-55',
+    url: 'tel:+78005555555',
+  },
 });

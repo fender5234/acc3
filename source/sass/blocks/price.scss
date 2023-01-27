@@ -1,0 +1,29 @@
+.price {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 60px;
+
+  @include vp-767 {
+    font-size: 48px;
+  }
+}
+
+.price__decor {
+  position: absolute;
+  z-index: -1;
+  bottom: -6px;
+  left: 50%;
+  font-size: 100px;
+  color: rgba($color-whisper, 0.48);
+  overflow-wrap: normal;
+  transform: translateX(-50%);
+
+  @include vp-767 {
+    font-size: 80px;
+  }
+}
+
+.price__value {
+  color: $color-egyptian-blue;
+}

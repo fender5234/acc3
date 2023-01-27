@@ -1,0 +1,102 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 46px;
+  margin: 0;
+  padding: 7px 0 0;
+  list-style: none;
+  border-bottom: 2px solid rgba($color-grey, 0.2);
+
+  @include vp-1199 {
+    column-gap: 54px;
+    padding-top: 8px;
+  }
+
+  @include vp-767 {
+    column-gap: 45px;
+  }
+}
+
+.tabs__control {
+  display: block;
+  padding: 11px 0;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: transparent;
+  border: none;
+  outline-offset: 0;
+  opacity: 0.5;
+  cursor: pointer;
+
+  @include default-interactive;
+
+  @include vp-1199 {
+    padding: 12px 0;
+    font-size: 18px;
+  }
+
+  @include vp-767 {
+    padding: 13px 0;
+    font-size: 16px;
+  }
+}
+
+.tabs__control.is-active {
+  position: relative;
+  opacity: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    background-color: $color-crimson;
+  }
+}
+
+.tabs__list {
+  display: grid;
+  gap: 40px;
+  width: 100%;
+  margin: 38px 0 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1199 {
+    margin-top: 44px;
+  }
+
+  @include vp-767 {
+    margin-top: 34px;
+  }
+}
+
+.tabs__item {
+  display: none;
+}
+
+.tabs__item.is-active {
+  display: block;
+}
+
+.tabs__item-body {
+  margin: 0;
+}
+
+.tabs.no-js {
+  .tabs__controls {
+    display: none;
+  }
+
+  .tabs__item {
+    display: block;
+  }
+}

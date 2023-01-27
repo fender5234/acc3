@@ -1,0 +1,19 @@
+<div class="tabs no-js {{ bemMix }}" data-tabs>
+	<ul class="tabs__controls">
+		{% for tab in tabs %}
+			<li>
+				<button class="tabs__control {{ loop.first ? 'is-active' }}" type="button" data-open-tab="{{ loop.index }}">
+					{{ tab.title }}
+				</button>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<ul class="tabs__list">
+		{% for tab in tabs %}
+			<li class="tabs__item {{ loop.first ? 'is-active' }}" data-tab="{{ loop.index }}">
+				{% include component ~ '.twig' with tab|merge({ bemMix: 'tabs__item-body' }) %}
+			</li>
+		{% endfor %}
+	</ul>
+</div>

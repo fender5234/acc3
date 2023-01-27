@@ -1,0 +1,50 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 30px;
+
+  @include vp-1199 {
+    column-gap: 60px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.form__group {
+  margin: 0;
+
+  label {
+    @include visually-hidden;
+  }
+
+  input {
+    width: 100%;
+    padding: 7px 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-light-slate-grey;
+    outline-offset: -1px;
+
+    @include vp-767 {
+      padding: 6px 0;
+    }
+  }
+}
+
+.form__submit {
+  grid-column: 1 / -1;
+  padding: 16px 32px;
+  font-size: 14px;
+  line-height: 16px;
+  outline: 1px solid;
+
+  @include vp-767 {
+    margin-top: 9px;
+  }
+}

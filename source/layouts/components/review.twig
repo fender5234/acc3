@@ -1,0 +1,10 @@
+<blockquote class="review {{ bemMix }}">
+	<p class="review__picture">
+		{% include 'picture.twig' with image|merge({ className: 'review__image' }) %}
+	</p>
+
+	<cite class="review__author">{{ author }}</cite>
+	<div class="review__content">
+		{{ content }}
+	</div>
+</blockquote>

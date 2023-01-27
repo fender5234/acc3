@@ -1,0 +1,65 @@
+.dict {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+
+  @include vp-1199 {
+    gap: 77px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 6px;
+    left: 50%;
+    width: 1px;
+    background-color: $color-light-slate-grey;
+    transform: translateX(-50%);
+
+    @include vp-1199 {
+      left: calc(50% - 10px);
+    }
+
+    @include vp-767 {
+      content: none;
+    }
+  }
+}
+
+.dict__item {
+  margin: 0;
+}
+
+.dict__key {
+  margin: 0 0 4px;
+  font-weight: 700;
+
+  @include vp-1199 {
+    margin-bottom: 6px;
+    font-size: 20px;
+  }
+}
+
+.dict__value {
+  margin: 0;
+  font-size: 14px;
+
+  @include vp-1199 {
+    font-size: 18px;
+  }
+
+  + .dict__key {
+    margin-top: 16px;
+
+    @include vp-1199 {
+      margin-top: 19px;
+    }
+  }
+}

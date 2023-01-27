@@ -1,0 +1,134 @@
+.page {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page__heading {
+  margin: 0 0 37px;
+  text-align: center;
+
+  &--alter {
+    margin-bottom: 48px;
+    text-align: left;
+
+    @include vp-1249 {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      margin-bottom: 43px;
+    }
+  }
+}
+
+.page__subscriptions {
+  margin-bottom: 120px;
+
+  @include vp-1199 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 70px;
+  }
+}
+
+.page__event {
+  margin-bottom: 106px;
+
+  @include vp-1199 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 63px;
+  }
+}
+
+.page__trainers {
+  margin-bottom: 91px;
+
+  @include vp-1199 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 70px;
+  }
+}
+
+.page__advantages {
+  margin-bottom: 150px;
+
+  @include vp-1199 {
+    margin-bottom: 91px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 64px;
+  }
+}
+
+.page__promo {
+  margin-bottom: 117px;
+
+  @include vp-1199 {
+    margin-bottom: 95px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 63px;
+  }
+}
+
+.page__reviews {
+  margin-bottom: 120px;
+
+  @include vp-1199 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 70px;
+  }
+
+  @include vp-767 {
+    .page__heading {
+      margin-bottom: 43px;
+    }
+  }
+}
+
+.page__slider {
+  width: 680px;
+  margin: 0 auto;
+
+  @include vp-1199 {
+    width: 678px;
+  }
+
+  @include vp-767 {
+    width: 395px;
+  }
+
+  @include vp-424 {
+    width: 290px;
+  }
+
+  &--wide {
+    width: calc(100% + 120px);
+    margin: 0 0 0 -60px;
+
+    @include vp-1299 {
+      width: 980px;
+      margin: 0 auto;
+    }
+
+    @include vp-767 {
+      width: 332px;
+    }
+  }
+}

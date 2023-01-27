@@ -1,4 +1,61 @@
 {% extends '../main.twig' %}
 
 {% block main %}
+	{% include '../components/about.twig' with about %}
+
+	{% include '../components/accent-section.twig' with {
+		bemMix: 'page__subscriptions',
+		component: 'tabs',
+		decor: subscriptions.decor,
+		id: 'subscriptions',
+		data: {
+			component: 'cards-list',
+			listComponent: 'card',
+			heading: subscriptions.heading,
+			tabs: subscriptions.groups
+		}
+	} %}
+
+	{% include '../components/event.twig' with event|merge({
+		bemMix: 'page__event container'
+	}) %}
+
+	<section class="page__trainers container">
+		<h2 class="page__heading page__heading--alter heading">{{ trainers.heading }}</h2>
+
+		{% include '../components/slider.twig' with {
+			bemMix: 'page__slider page__slider--wide',
+			component: 'figure',
+			loop: true,
+			multiple: true,
+			slides: trainers.list
+		} %}
+	</section>
+
+	{% include '../components/accent-section.twig' with {
+		alter: true,
+		bemMix: 'page__advantages',
+		component: 'rates',
+		data: advantages
+	} %}
+
+	{% include '../components/promo.twig' with promo|merge({
+		bemMix: 'page__promo container'
+	}) %}
+
+	<section class="page__reviews container">
+		<h2 class="page__heading heading">{{ reviews.heading }}</h2>
+
+		{% include '../components/slider.twig' with {
+			bemMix: 'page__slider',
+			component: 'review',
+			slides: reviews.list,
+			shadow: true
+		} %}
+	</section>
+
+	{% include '../components/content-group.twig' with { data: [
+		ticket|merge({ component: 'form' }),
+		contacts|merge({ component: 'dict' })
+	] } %}
 {% endblock %}

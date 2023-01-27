@@ -1,0 +1,88 @@
+.accent-section {
+  padding: 120px 0;
+  background-color: $color-ghost-white;
+
+  @include vp-1199 {
+    padding: 91px 0 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 54px;
+    padding-bottom: 70px;
+  }
+}
+
+.accent-section__inner {
+  &--decor {
+    position: relative;
+    z-index: 1;
+
+    @include vp-1199 {
+      padding-top: 9px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -240px;
+      bottom: -270px;
+      z-index: -1;
+      width: 470px;
+      height: 494px;
+      background-size: cover;
+
+      @include background-image;
+
+      @include vp-1199 {
+        right: -73px;
+        bottom: -225px;
+        width: 420px;
+        height: 444px;
+      }
+
+      @include vp-767 {
+        content: none;
+      }
+    }
+  }
+}
+
+.accent-section__heading {
+  margin: 0;
+  text-align: center;
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+.accent-section__body {
+  margin: 0;
+}
+
+.accent-section--alter {
+  margin-left: $offset-fluid;
+  padding: 146px $offset-fluid 75px 0;
+
+  @include vp-1299 {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  @include vp-1199 {
+    padding-bottom: 88px;
+  }
+
+  @include vp-767 {
+    padding-top: 63px;
+    padding-bottom: 65px;
+  }
+
+  .accent-section__heading {
+    margin-bottom: 26px;
+
+    @include vp-1199 {
+      margin-bottom: 28px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<dl class="params-list {{ bemMix }}">
+	{% for param in params %}
+		<dt class="params-list__key">{{ param.key }}</dt>
+
+		<dd class="params-list__value">
+			{{ param.value }}
+
+			{% if param.additions %}
+				<span class="params-list__additions">{{ param.additions }}</span>
+			{% endif %}
+		</dd>
+	{% endfor %}
+</dl>

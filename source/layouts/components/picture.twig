@@ -10,14 +10,14 @@
 		{% if webpTablet %}
 			<source
 				type="image/webp"
-				media="(max-width: 1023px)"
+				media="(max-width: 1199px)"
 				srcset="{{ webpTablet }} 1x{{ webpTablet2x ? ', ' ~ webpTablet2x ~ ' 2x' }}"
 			/>
 		{% endif %}
 		{% if webp %}
 			<source
 				type="image/webp"
-				{{ webpTablet or webpMobile ? 'media="(min-width: 1024px)"' }}
+			{{ webpTablet or webpMobile ? 'media="(min-width: 1200px)"' }}
 				srcset="{{ webp }} 1x{{ webp2x ? ', ' ~ webp2x ~ ' 2x' }}"
 			/>
 		{% endif %}

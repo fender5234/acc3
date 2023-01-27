@@ -1,0 +1,7 @@
+<ul class="cards-list {{ bemMix }}">
+	{% for item in list %}
+		<li class="cards-list__item">
+			{% include listComponent ~ '.twig' with item|merge({ bemMix: 'cards-list__item-body' }) %}
+		</li>
+	{% endfor %}
+</ul>

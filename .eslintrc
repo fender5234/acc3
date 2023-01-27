@@ -11,5 +11,7 @@ env:
 
 globals:
   Swiper: readonly
+  YT: readonly
+  onYouTubePlayerAPIReady: writable
 
 extends: "./eslintconfig.cjs"

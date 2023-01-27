@@ -1,0 +1,134 @@
+.promo__heading {
+  margin: 0 0 33px;
+  text-align: center;
+
+  @include vp-1199 {
+    margin-bottom: 42px;
+  }
+}
+
+.promo__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: dense;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1199 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo__item {
+  border: 7px solid transparent;
+  border-image: $border-image;
+  color: $color-resolution-blue;
+
+  @include vp-1199 {
+    min-height: 211px;
+  }
+}
+
+.promo__figure {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-row: span 2;
+
+  @include vp-1199 {
+    grid-row: span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo__picture {
+  align-self: center;
+  margin: 0;
+
+  @include vp-767 {
+    justify-self: center;
+  }
+}
+
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 17px 28px 27px;
+
+  @include vp-767 {
+    padding: 28px 28px 38px;
+    text-align: center;
+  }
+
+  h3 {
+    margin: 0 0 3px;
+    font-weight: 700;
+    font-size: 26px;
+
+    strong {
+      display: block;
+      margin: -22px 0 -2px;
+      font-weight: 700;
+      font-size: 70px;
+    }
+  }
+
+  p {
+    margin: 0 0 20px;
+    line-height: 22px;
+  }
+
+  .promo__link-wrapper {
+    margin: auto 0 0;
+  }
+}
+
+.promo__link {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+
+  @include default-interactive;
+}
+
+.promo__figure .promo__content {
+  padding: 34px 45px 44px;
+  color: $color-default-white;
+  background-color: $color-torchred;
+
+  @include vp-767 {
+    padding-bottom: 14px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 25px;
+
+    @include vp-767 {
+      margin: -5px 0 30px;
+    }
+  }
+
+  .promo__link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

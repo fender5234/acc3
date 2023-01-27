@@ -1,0 +1,9 @@
+<ul class="rates {{ bemMix }}">
+	{% for rate in data.list %}
+		<li class="rates__{{ rate.lead ? 'lead' : 'item' }}">
+			<p class="rates__{{ rate.lead ? 'lead-' }}value">{{ rate.value }}</p>
+			<p class="rates__{{ rate.lead ? 'lead-' }}key">{{ rate.key }}</p>
+			<div class="rates__content">{{ rate.content }}</div>
+		</li>
+	{% endfor %}
+</ul>

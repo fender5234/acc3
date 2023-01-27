@@ -1,0 +1,14 @@
+<section
+	class="accent-section {{ alter ? 'accent-section--alter'}} {{ bemMix }}"
+	{{ id ? 'id="' ~ id ~ '"' }}
+	{{ decor ? background(decor) }}
+>
+	<div class="accent-section__inner {{ decor ? 'accent-section__inner--decor' }} container">
+		<h2 class="accent-section__heading heading">{{ data.heading }}</h2>
+		{{ content ?? ''}}
+
+		{% if component and data %}
+			{% include component ~ '.twig' with data|merge({ bemMix: 'accent-section__body' }) %}
+		{% endif %}
+	</div>
+</section>

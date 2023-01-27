@@ -1,0 +1,28 @@
+<article class="event {{ bemMix }}">
+	<div class="event__content">
+		<h2 class="event__heading">{{ heading }}</h2>
+
+		{% include 'params-list.twig' with {
+			bemMix: 'event__datetime',
+			params: [
+				{
+					additions: datetime.month ~ '<br>' ~ datetime.year,
+					key: 'Дата',
+					value: datetime.day
+				},
+				{
+					key: 'Время',
+					value: '<time datetime="' ~ datetime.date ~ ' ' ~ datetime.time ~ '">' ~ datetime.time ~ '</time>'
+				}
+			]
+		} %}
+
+		<div class="event__description">{{ description }}</div>
+
+		<a class="event__btn btn" href="{{ link.url }}">{{ link.title }}</a>
+	</div>
+
+	<p class="event__picture">
+		{% include 'picture.twig' with image %}
+	</p>
+</article>

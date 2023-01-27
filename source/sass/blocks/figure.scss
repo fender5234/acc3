@@ -1,0 +1,117 @@
+.figure {
+  position: relative;
+  color: $color-default-white;
+  background-color: rgba($color-sapphire, 0.89);
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+
+    .figure__body {
+      background-color: inherit;
+    }
+
+    .figure__heading {
+      margin-top: 0;
+    }
+
+    .figure__description,
+    .figure__content {
+      max-height: 100%;
+      transform: scaleY(1);
+    }
+
+    .figure__description {
+      margin: -4px 0 34px;
+    }
+  }
+}
+
+.figure__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @include vp-1199 {
+    max-height: 294px;
+  }
+
+  @include vp-767 {
+    min-height: 274px;
+  }
+}
+
+.figure__body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 51px 30px 23px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color $trans-default;
+
+  @include custom-scrollbar(currentColor, transparent);
+
+  @include vp-767 {
+    padding: 41px 30px 23px;
+  }
+}
+
+.figure__heading {
+  margin: auto 0 0;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+
+.figure__description,
+.figure__content {
+  max-height: 0;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: transform $trans-default, max-height $trans-default, margin $trans-default;
+}
+
+.figure__description {
+  margin: 0;
+  text-align: center;
+}
+
+.figure__content {
+  padding-left: 25px;
+  font-size: 14px;
+
+  @include vp-767 {
+    padding-left: 4px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding-left: 16px;
+
+    + li {
+      margin-top: 13px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background-color: currentColor;
+      border-radius: 50%;
+    }
+  }
+}

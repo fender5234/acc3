@@ -1,0 +1,63 @@
+.card {
+  padding: 50px 30px 60px;
+  text-align: center;
+  border: 7px solid transparent;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border-image: $border-image;
+
+    .card__btn {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      color: $color-default-white;
+      background-image: linear-gradient(97.05deg, $color-torchred 17.6%, $color-cobalt 95.31%);
+      border: 1px solid $color-default-white;
+    }
+  }
+
+  @include vp-767 {
+    padding-top: 43px;
+    padding-bottom: 47px;
+  }
+}
+
+.card__heading {
+  margin: 0 0 5px;
+  font-weight: 700;
+  font-size: 26px;
+
+  @include vp-767 {
+    margin-bottom: 9px;
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.card__description {
+  margin: 0 0 66px;
+  color: $color-chambray;
+
+  @include vp-767 {
+    margin-bottom: 54px;
+  }
+}
+
+.card__price {
+  margin: 0 0 34px;
+
+  @include vp-767 {
+    margin-bottom: 31px;
+  }
+}
+
+.card__btn {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 100%;
+  max-width: 208px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  outline-offset: -4px;
+}

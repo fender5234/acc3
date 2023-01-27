@@ -5,10 +5,32 @@ $color-transparent: rgba($color-default-white, 0);
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/000000
+$color-black-russian: #030a1a;
+$color-chambray: #495a7d;
+$color-cobalt: #003eb7;
+$color-cobalt-light: #0041ca;
+$color-crimson: #d10a42;
+$color-dark-cerulean: #003d85;
+$color-dark-cerulean-light: #14367a;
+$color-dark-gray: #afafaf;
+$color-egyptian-blue: #103aae;
+$color-ghost-white: #f8f9fc;
+$color-grey: #787878;
+$color-light-slate-grey: #74819c;
+$color-persian-blue: #2e35ac;
+$color-resolution-blue: #1c3374;
+$color-sapphire: #102654;
+$color-smalt: #00359f;
+$color-spindle: #b6bdcc;
+$color-torchred: #ed0233;
+$color-venetian-red: #b80027;
+$color-whisper: #e8e8e8;
 
 // Gradient
+$border-image: linear-gradient(148.82deg, $color-crimson 0.85%, $color-smalt 100%) 1;
 
-// Shadow
+// Offsets
+$offset-fluid: calc(50% - 650px);
 
 // Typography
 $fz-default: 16px;
@@ -22,9 +44,10 @@ $trans-default: 0.3s $tf-default;
 
 // Viewports
 $vp-320: 320px;
+$vp-425: 425px;
 $vp-768: 768px;
 $vp-1024: 1024px;
-$vp-1100: 1100px;
+$vp-1200: 1200px;
 $vp-1250: 1250px;
 $vp-1300: 1300px;
 

@@ -1,0 +1,9 @@
+<ul class="socials {{ bemMix }}">
+	{% for link in socials %}
+		<li class="socials__item">
+			<a class="socials__link socials__link--{{ link.id }}" href="{{ link.url }}">
+				<span class="visually-hidden">{{ link.title }}.</span>
+			</a>
+		</li>
+	{% endfor %}
+</ul>

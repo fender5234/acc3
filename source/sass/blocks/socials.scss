@@ -1,0 +1,39 @@
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  padding: 0;
+  list-style: none;
+}
+
+.socials__item {
+  flex-shrink: 0;
+}
+
+.socials__link {
+  display: block;
+  background-color: $color-default-white;
+  border-radius: 50%;
+
+  @include default-interactive;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: $color-black-russian;
+  }
+
+  &--vk::before {
+    @include mask("vk");
+  }
+
+  &--ok::before {
+    @include mask("ok");
+  }
+
+  &--reddit::before {
+    @include mask("reddit");
+  }
+}

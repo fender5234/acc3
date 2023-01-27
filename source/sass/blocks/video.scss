@@ -1,0 +1,64 @@
+.video {
+  position: relative;
+  padding-top: calc(22800% / 364);
+  background-color: $color-default-black;
+  background-size: cover;
+
+  @include background-image;
+
+  @include vp-424 {
+    padding-top: calc(16700% / 320);
+  }
+
+  > span {
+    display: none; // savefrom
+  }
+}
+
+.video__player,
+.video__control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video__player {
+  display: none;
+}
+
+.video__control {
+  display: flex;
+  background-color: transparent;
+  background-size: cover;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  @include background-image;
+  @include default-interactive;
+
+  &::before {
+    content: "";
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/sprite.svg#play");
+
+    @include vp-1199 {
+      width: 73px;
+      height: 73px;
+    }
+  }
+}
+
+.video.is-active {
+  .video__player {
+    display: block;
+  }
+
+  .video__control {
+    display: none;
+  }
+}
